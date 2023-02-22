@@ -7,7 +7,7 @@ def ask_question(name):
     i = 0
     while i <= 2:
         random_int = randint(0, 100)
-        print('Question: ', random_int)
+        print('Question:', random_int)
         answer = prompt.string()
         if ((random_int % 2) == 0 and answer == 'yes') or \
            ((random_int % 2) != 0 and answer == 'no'):
