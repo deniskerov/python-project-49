@@ -76,6 +76,42 @@ def calc_progression():
     return is_correct_answer(answer, result)
 
 
+def is_correct_answer_prime(answer):
+    if (answer == 'yes') or (answer == 'no'):
+        return True
+    else:
+        return False
+
+
+def right_answer_prime():
+    prime_string = "2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, " \
+                   "37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79," \
+                   "83, 89, 97, 101, 103, 107, 109, 113, 127, 131," \
+                   "137, 139, 149, 151, 157, 163, 167, 173, 179, 181," \
+                   "191, 193, 197, 199"
+    random_number = randint(2, 199)
+    is_prime = prime_string.find(', ' + str(random_number))
+    answer = ask_question(random_number)
+    if is_correct_answer_prime(answer):
+        if (is_prime > 0) and (answer == 'yes') \
+                or (is_prime < 0) and (answer == 'no'):
+            print('Correct')
+            return 'Win'
+        elif answer == 'yes':
+            return ('"yes" is wrong answer ;(.'
+                    ' Correct answer was "no"')
+        else:
+            return ('"no" is wrong answer ;(.'
+                    ' Correct answer was "yes"')
+    else:
+        if is_prime > 0:
+            return (str(answer) + ' is wrong answer ;(.'
+                    ' Correct answer was "yes"')
+        else:
+            return (str(answer) + ' is wrong answer ;(.'
+                    ' Correct answer was "no"')
+
+
 def welcome():
     name = prompt.string("May ask you name? ")
     print('Hello,', name)
