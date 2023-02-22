@@ -84,17 +84,17 @@ def is_correct_answer_prime(answer):
 
 
 def right_answer_prime():
-    prime_string = "2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, " \
-                   "37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79," \
-                   "83, 89, 97, 101, 103, 107, 109, 113, 127, 131," \
-                   "137, 139, 149, 151, 157, 163, 167, 173, 179, 181," \
-                   "191, 193, 197, 199"
+    prime_string = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31,
+                    37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79,
+                    83, 89, 97, 101, 103, 107, 109, 113, 127, 131,
+                    137, 139, 149, 151, 157, 163, 167, 173, 179, 181,
+                    191, 193, 197, 199]
     random_number = randint(2, 199)
-    is_prime = prime_string.find(', ' + str(random_number))
+    is_prime = prime_string.count(random_number)
     answer = ask_question(random_number)
     if is_correct_answer_prime(answer):
         if (is_prime > 0) and (answer == 'yes') \
-                or (is_prime < 0) and (answer == 'no'):
+                or (is_prime == 0) and (answer == 'no'):
             print('Correct')
             return 'Win'
         elif answer == 'yes':
