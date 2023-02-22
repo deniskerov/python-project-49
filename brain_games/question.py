@@ -1,4 +1,5 @@
 import prompt
+import math
 from random import randint
 from random import choice
 
@@ -34,6 +35,28 @@ def calc_question():
     else:
         return (str(answer) + ' is wrong answer ;(.'
                 'Correct answer was ' + str(result))
+
+
+def is_correct_answer(answer, result):
+    if is_int(answer):
+        if result == int(answer):
+            print('Correct')
+            return 'Win'
+        else:
+            return (str(answer) + ' is wrong answer ;(.'
+                    ' Correct answer was ' + str(result))
+    else:
+        return (str(answer) + ' is wrong answer ;(.'
+                ' Correct answer was ' + str(result))
+
+
+def calc_nod():
+    random_int_a = randint(1, 100)
+    random_int_b = randint(1, 100)
+    random_string = str(random_int_a) + ' ' + str(random_int_b)
+    answer = ask_question(random_string)
+    result = math.gcd(random_int_a, random_int_b)
+    return is_correct_answer(answer, result)
 
 
 def welcome():
