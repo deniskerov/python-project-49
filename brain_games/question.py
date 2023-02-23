@@ -91,7 +91,7 @@ def right_answer_prime():
                     191, 193, 197, 199]
     random_number = randint(2, 199)
     is_prime = prime_string.count(random_number)
-    answer = ask_question(random_number)
+    answer = ask_question(str(random_number))
     if is_correct_answer_prime(answer):
         if (is_prime > 0) and (answer == 'yes') \
                 or (is_prime == 0) and (answer == 'no'):
