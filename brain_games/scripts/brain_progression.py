@@ -12,9 +12,9 @@ def brain_games_progression(name):
             i += 1
         else:
             print(result_calc)
-            print("Let's try again,", name, "!")
+            print("Let's try again, " + name + "!")
             return
-    print('Congratulations,', name, "!")
+    print('Congratulations, ' + name + "!")
 
 
 def main():

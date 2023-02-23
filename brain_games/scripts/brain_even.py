@@ -26,9 +26,9 @@ def main():
     print('Hello,', name)
     print('Answer "yes" if the number is even, otherwise answer "no".')
     if ask_question(name) != 'Mistake':
-        print('Congratulations,', name, "!")
+        print('Congratulations, ' + name + "!")
     else:
-        print("Let's try again,", name, "!")
+        print("Let's try again, " + name + "!")
 
 
 if __name__ == '__main__':
