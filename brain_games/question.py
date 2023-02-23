@@ -13,7 +13,7 @@ def is_int(answer):
 
 
 def ask_question(question):
-    print('Question: ', question)
+    print('Question: ' + question)
     return prompt.string('Your answer: ')
 
 
