@@ -1,34 +1,16 @@
 #!/usr/bin/env python3
-import prompt
-from random import randint
+from brain_games.question import welcome
+from brain_games.question import game, is_even_question
 
 
-def ask_question(name):
-    i = 0
-    while i <= 2:
-        random_int = randint(0, 100)
-        print('Question:', random_int)
-        answer = prompt.string()
-        if ((random_int % 2) == 0 and answer == 'yes') or \
-           ((random_int % 2) != 0 and answer == 'no'):
-            print('Correct')
-            i += 1
-        elif answer == 'yes':
-            print("'yes' is wrong answer ;(. Correct answer was 'no'.")
-            return 'Mistake'
-        else:
-            print("'no' is wrong answer ;(. Correct answer was 'yes'.")
-            return 'Mistake'
+def brain_games_even(name):
+    print('Answer "yes" if the number is even, otherwise answer "no".')
+    game(name, is_even_question)
 
 
 def main():
-    name = prompt.string("May ask you name? ")
-    print('Hello,', name)
-    print('Answer "yes" if the number is even, otherwise answer "no".')
-    if ask_question(name) != 'Mistake':
-        print('Congratulations, ' + name + "!")
-    else:
-        print("Let's try again, " + name + "!")
+    name = welcome()
+    brain_games_even(name)
 
 
 if __name__ == '__main__':

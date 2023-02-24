@@ -1,25 +1,16 @@
 #!/usr/bin/env python3
 from brain_games.question import welcome
-from brain_games.question import calc_nod
+from brain_games.question import game, calc_nod
 
 
-def brain_games_nod(name):
+def brain_games_gcd(name):
     print('Find the greatest common divisor of given numbers.')
-    i = 0
-    while i <= 2:
-        result_calc = calc_nod()
-        if result_calc == 'Win':
-            i += 1
-        else:
-            print(result_calc)
-            print("Let's try again, " + name + "!")
-            return
-    print('Congratulations, ' + name + "!")
+    game(name, calc_nod)
 
 
 def main():
     name = welcome()
-    brain_games_nod(name)
+    brain_games_gcd(name)
 
 
 if __name__ == '__main__':

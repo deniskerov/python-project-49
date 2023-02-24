@@ -4,17 +4,33 @@ from random import randint
 from random import choice
 
 
-def is_int(answer):
-    try:
-        int(answer)
-        return True
-    except ValueError:
-        return False
+def is_even(random_int):
+    if random_int % 2 == 0:
+        return 'yes'
+    else:
+        return 'no'
 
 
 def ask_question(question):
     print('Question: ' + question)
     return prompt.string('Your answer: ')
+
+
+def is_correct_answer(answer, correct_answer):
+    if correct_answer == answer:
+        print('Correct')
+        return 'Win'
+    else:
+        print("'" + answer + "'" + " is wrong answer "
+              ";(. Correct answer was '" + correct_answer + "'.")
+        return 'Mistake'
+
+
+def is_even_question():
+    random_int = randint(1, 100)
+    is_even_value = is_even(random_int)
+    answer = ask_question(str(random_int))
+    return is_correct_answer(answer, is_even_value)
 
 
 def calc_question():
@@ -25,29 +41,7 @@ def calc_question():
     random_string = str(random_int_a) + ' ' + operand + ' ' + str(random_int_b)
     answer = ask_question(random_string)
     result = eval(random_string)
-    if is_int(answer):
-        if result == int(answer):
-            print('Correct')
-            return 'Win'
-        else:
-            return (str(answer) + ' is wrong answer ;(.'
-                    'Correct answer was ' + str(result))
-    else:
-        return (str(answer) + ' is wrong answer ;(.'
-                'Correct answer was ' + str(result))
-
-
-def is_correct_answer(answer, result):
-    if is_int(answer):
-        if result == int(answer):
-            print('Correct')
-            return 'Win'
-        else:
-            return (str(answer) + ' is wrong answer ;(.'
-                    ' Correct answer was ' + str(result))
-    else:
-        return (str(answer) + ' is wrong answer ;(.'
-                ' Correct answer was ' + str(result))
+    return is_correct_answer(answer, str(result))
 
 
 def calc_nod():
@@ -56,7 +50,7 @@ def calc_nod():
     random_string = str(random_int_a) + ' ' + str(random_int_b)
     answer = ask_question(random_string)
     result = math.gcd(random_int_a, random_int_b)
-    return is_correct_answer(answer, result)
+    return is_correct_answer(answer, str(result))
 
 
 def calc_progression():
@@ -72,15 +66,8 @@ def calc_progression():
     random_count = randint(1, random_progression_len - 1)
     result = int(progression[random_count])
     random_string = ' '.join(progression)
-    answer = ask_question(random_string.replace(str(result), '..'))
-    return is_correct_answer(answer, result)
-
-
-def is_correct_answer_prime(answer):
-    if (answer == 'yes') or (answer == 'no'):
-        return True
-    else:
-        return False
+    answer = ask_question(random_string.replace(str(result), '..', 1))
+    return is_correct_answer(answer, str(result))
 
 
 def right_answer_prime():
@@ -90,29 +77,27 @@ def right_answer_prime():
                     137, 139, 149, 151, 157, 163, 167, 173, 179, 181,
                     191, 193, 197, 199]
     random_number = randint(2, 199)
-    is_prime = prime_string.count(random_number)
-    answer = ask_question(str(random_number))
-    if is_correct_answer_prime(answer):
-        if (is_prime > 0) and (answer == 'yes') \
-                or (is_prime == 0) and (answer == 'no'):
-            print('Correct')
-            return 'Win'
-        elif answer == 'yes':
-            return ('"yes" is wrong answer ;(.'
-                    ' Correct answer was "no"')
-        else:
-            return ('"no" is wrong answer ;(.'
-                    ' Correct answer was "yes"')
+    if prime_string.count(random_number) > 0:
+        is_prime = 'yes'
     else:
-        if is_prime > 0:
-            return (str(answer) + ' is wrong answer ;(.'
-                    ' Correct answer was "yes"')
-        else:
-            return (str(answer) + ' is wrong answer ;(.'
-                    ' Correct answer was "no"')
+        is_prime = 'no'
+    answer = ask_question(str(random_number))
+    return is_correct_answer(answer, is_prime)
 
 
 def welcome():
     name = prompt.string("May ask you name? ")
     print('Hello,', name)
     return name
+
+
+def game(name, game_name):
+    i = 0
+    while i <= 2:
+        result_calc = game_name()
+        if result_calc == 'Win':
+            i += 1
+        else:
+            print("Let's try again, " + name + "!")
+            return
+    print('Congratulations, ' + name + "!")
