@@ -2,6 +2,7 @@ import prompt
 import math
 from random import randint
 from random import choice
+ROUNDS_COUNT = 3
 
 
 def is_even(random_int):
@@ -92,8 +93,8 @@ def welcome():
 
 
 def game(name, game_name):
-    i = 0
-    while i <= 2:
+    i = 1
+    while i <= ROUNDS_COUNT:
         result_calc = game_name()
         if result_calc == 'Win':
             i += 1
