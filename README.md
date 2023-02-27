@@ -19,7 +19,8 @@
    >sudo apt install python3
 
   Команда для macOS:
-   ># https://brew.sh/index_ru.html
+   > https://brew.sh/index_ru.html
+   > 
    >brew install python
 
 Установить Poetry (https://python-poetry.org/docs/#installation)
