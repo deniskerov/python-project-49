@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = "My implementation of the ""Mind Games"" project"
+description = "My implementation of the Mind Games project"
 authors = ["Denis Kerov <denis.kerov@yandex.ru>"]
 repository = "https://github.com/deniskerov/python-project-49"
 classifiers = ["Topic :: Software Development :: Libraries :: Python Modules"]
