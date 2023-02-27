@@ -14,27 +14,37 @@
 
 Установить Python:
   Команда для Ubuntu или Ubuntu on Windows (WSL):
-#	sudo apt update
-#       sudo apt install python3
+   >sudo apt update
+   >
+   >sudo apt install python3
 
   Команда для macOS:
-#	# https://brew.sh/index_ru.html
-#	brew install python
+   ># https://brew.sh/index_ru.html
+   >brew install python
 
 Установить Poetry (https://python-poetry.org/docs/#installation)
 
 После этого, с помощью команд:
-#	make build
-#	make publish
-#	make package-install
+>	make build
+>	
+>	make publish
+>	
+>	make package-install
 
 Установить пакет в систему.
 После этого запускать проложения можно по именам:
-	brain-games
-	brain-even
-	brain-calc
-	brain-gcd
-	brain-prime
-	brain-progression
+>	brain-games
+>	
+>brain-even
+>	
+>	brain-calc
+>	
+>	brain-gcd
+>	
+>	brain-prime
+>	
+>	brain-progression
+
+Видеоинструкция:
 
 [![asciicast](https://asciinema.org/a/gFQomhe0rPEJ4nR3eunGsFcsV.svg)](https://asciinema.org/a/gFQomhe0rPEJ4nR3eunGsFcsV)
