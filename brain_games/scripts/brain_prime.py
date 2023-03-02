@@ -6,7 +6,7 @@ from brain_games.games.prime import prime_game
 
 def brain_games_prime(name):
     game(name, prime_game, 'Answer "yes" if given number is prime.'
-         'Otherwise answer "no".')
+         ' Otherwise answer "no".')
 
 
 def main():
