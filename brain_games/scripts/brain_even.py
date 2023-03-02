@@ -6,7 +6,7 @@ from brain_games.games.even import even_game
 
 def brain_games_even(name):
     game(name, even_game, 'Answer "yes" if the number'
-                          'is even, otherwise answer "no".')
+                          ' is even, otherwise answer "no".')
 
 
 def main():
