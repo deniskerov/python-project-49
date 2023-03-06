@@ -1,15 +1,22 @@
 from random import randint
+FIRST_ANSWER = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
-def prime_game():
-    prime_string = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31,
-                    37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79,
-                    83, 89, 97, 101, 103, 107, 109, 113, 127, 131,
-                    137, 139, 149, 151, 157, 163, 167, 173, 179, 181,
-                    191, 193, 197, 199]
-    random_number = randint(2, 199)
-    if prime_string.count(random_number) > 0:
-        is_prime = 'yes'
+def is_prime(number):
+    i = 0
+    for j in range(2, number):
+        if (number % j == 0):
+            i += 1
+    if (i <= 0):
+        return True
     else:
-        is_prime = 'no'
-    return [str(random_number), is_prime]
+        return False
+
+
+def generate_round():
+    random_number = randint(2, 199)
+    if is_prime(random_number) is True:
+        answer = 'yes'
+    else:
+        answer = 'no'
+    return [str(random_number), answer]

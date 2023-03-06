@@ -1,16 +1,10 @@
 #!/usr/bin/env python3
-from brain_games.engine import welcome
-from brain_games.engine import game
-from brain_games.games.calc import calc_game
-
-
-def brain_games_calc(name):
-    game(name, calc_game, 'What is the result of the expression?')
+from brain_games.engine import run
+from brain_games.games.calc import generate_round, FIRST_ANSWER
 
 
 def main():
-    name = welcome()
-    brain_games_calc(name)
+    run(generate_round, FIRST_ANSWER)
 
 
 if __name__ == '__main__':

@@ -2,23 +2,15 @@ import prompt
 ROUND_COUNT = 3
 
 
-def welcome():
+def run(game_name, first_answer):
     name = prompt.string("May ask you name? ")
     print('Hello,', name)
-    return name
-
-
-def ask_question(question):
-    print('Question: ' + question)
-    return prompt.string('Your answer: ')
-
-
-def game(name, game_name, first_string):
-    print(first_string)
+    print(first_answer)
     i = 0
     while i <= ROUND_COUNT - 1:
         result_game = game_name()
-        answer = ask_question(result_game[0])
+        print('Question: ' + result_game[0])
+        answer = prompt.string('Your answer: ')
         if answer == result_game[1]:
             print('Correct')
             i += 1

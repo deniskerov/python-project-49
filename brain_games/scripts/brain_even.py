@@ -1,17 +1,10 @@
 #!/usr/bin/env python3
-from brain_games.engine import welcome
-from brain_games.engine import game
-from brain_games.games.even import even_game
-
-
-def brain_games_even(name):
-    game(name, even_game, 'Answer "yes" if the number'
-                          ' is even, otherwise answer "no".')
+from brain_games.engine import run
+from brain_games.games.even import generate_round, FIRST_ANSWER
 
 
 def main():
-    name = welcome()
-    brain_games_even(name)
+    run(generate_round, FIRST_ANSWER)
 
 
 if __name__ == '__main__':

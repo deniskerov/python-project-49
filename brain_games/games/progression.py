@@ -1,7 +1,8 @@
 from random import randint
+FIRST_ANSWER = 'What number is missing in the progression?'
 
 
-def progression_game():
+def generate_round():
     random_progression_len = randint(7, 12)
     progression = []
     random_first_num = randint(1, 12)
